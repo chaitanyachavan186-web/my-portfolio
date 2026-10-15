@@ -1,0 +1,311 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Chavan Rushi | Portfolio</title>
+
+    <!-- Connect CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<script>
+const words = [
+    "Web Developer",
+    "Computer Engineering Student",
+    "Frontend Learner"
+];
+
+const typingText = document.getElementById("typing-text");
+
+let wordIndex = 0;
+let charIndex = 0;
+let deleting = false;
+
+function typeEffect() {
+    const currentWord = words[wordIndex];
+
+    if (deleting) {
+        charIndex--;
+    } else {
+        charIndex++;
+    }
+
+    typingText.textContent = currentWord.substring(0, charIndex);
+
+    let delay = deleting ? 45 : 90;
+
+    if (!deleting && charIndex === currentWord.length) {
+        deleting = true;
+        delay = 1200;
+    } else if (deleting && charIndex === 0) {
+        deleting = false;
+        wordIndex = (wordIndex + 1) % words.length;
+        delay = 350;
+    }
+
+    setTimeout(typeEffect, delay);
+}
+
+typeEffect();
+</script>
+<body>
+
+    <!-- Header / Navigation -->
+    <header>
+        <div class="logo">MyPortfolio.</div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+
+    <!-- Home / Hero Section -->
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <p class="intro">WELCOME TO MY PORTFOLIO</p>
+
+            <h1>
+                Hi, I'm <span>Chavan Rushi</span>
+            </h1>
+
+            <h2>Web Development Student</h2>
+
+            <p class="description">
+                I am a passionate student learning web development.
+                I enjoy creating modern websites and exploring new
+                technologies to improve my programming skills.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#projects" class="btn">View My Work</a>
+
+                <a href="#contact" class="btn btn-outline">
+                    Contact Me
+                </a>
+            </div>
+
+        </div>
+
+
+        <!-- Profile Photo -->
+        <div class="hero-image">
+
+            <div class="image-frame">
+                <img
+                    src="./images/my-photo.jpg"
+                    alt="Chavan Rushi profile photo"
+                >
+            </div>
+
+            <div class="photo-label">
+                <span class="status-dot"></span>
+                Student &amp; Aspiring Developer
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- About Section -->
+    <section id="about">
+
+        <h2>About Me</h2>
+
+        <p>
+            I am a Computer Engineering student interested in
+            programming, technology and web development. I enjoy
+            learning new skills, solving problems and building
+            useful projects. My goal is to become a skilled
+            developer and create websites that provide a great
+            user experience.
+        </p>
+
+    </section>
+
+
+    <!-- Skills Section -->
+    <section id="skills">
+
+        <h2>My Skills</h2>
+
+        <div class="container">
+
+            <div class="card">
+                <h3>HTML</h3>
+                <p>Creating structured and accessible webpages.</p>
+            </div>
+
+            <div class="card">
+                <h3>CSS</h3>
+                <p>Designing attractive and responsive websites.</p>
+            </div>
+
+            <div class="card">
+                <h3>JavaScript</h3>
+                <p>Learning to make websites interactive.</p>
+            </div>
+
+            <div class="card">
+                <h3>Python</h3>
+                <p>Learning programming logic and core concepts.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Professional Projects Section -->
+    <section id="projects" class="projects-section">
+
+        <div class="projects-heading">
+
+            <p class="section-subtitle">MY WORK</p>
+
+            <h2>My <span>Projects</span></h2>
+
+            <p class="projects-intro">
+                Here are some projects I have worked on
+                while learning programming and web development.
+            </p>
+
+        </div>
+
+
+        <div class="projects-grid">
+
+            <!-- Project 1 -->
+            <article class="project-card">
+
+                <div class="project-number">01</div>
+
+                <div class="project-icon">🌐</div>
+
+                <h3>Personal Portfolio</h3>
+
+                <p>
+                    A personal website to showcase my introduction,
+                    technical skills, projects and contact details.
+                </p>
+
+                <div class="project-tags">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>Web Design</span>
+                </div>
+
+                <a href="#home" class="project-link">
+                    View Portfolio <span>↗</span>
+                </a>
+
+            </article>
+
+
+            <!-- Project 2 -->
+            <article class="project-card">
+
+                <div class="project-number">02</div>
+
+                <div class="project-icon">✓</div>
+
+                <h3>To-Do List</h3>
+
+                <p>
+                    A task management project designed to help users
+                    organize daily activities and keep track of tasks.
+                </p>
+
+                <div class="project-tags">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                </div>
+
+                <a href="#contact" class="project-link">
+                    Project Details <span>↗</span>
+                </a>
+
+            </article>
+
+
+            <!-- Project 3 -->
+            <article class="project-card">
+
+                <div class="project-number">03</div>
+
+                <div class="project-icon">📚</div>
+
+                <h3>Student Planner</h3>
+
+                <p>
+                    A student planner concept for organizing college
+                    assignments, study schedules and important tasks.
+                </p>
+
+                <div class="project-tags">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>Planning</span>
+                </div>
+
+                <a href="#contact" class="project-link">
+                    Project Details <span>↗</span>
+                </a>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- Contact Section -->
+    <section id="contact">
+
+        <h2>Contact Me</h2>
+
+        <p>
+            Interested in connecting or discussing a project?
+            Feel free to contact me.
+        </p>
+
+        <p>
+            Email:
+            <a href="mailto:chavanrushi318@gmail.com">
+                chavanrushi318@gmail.com
+            </a>
+        </p>
+
+        <a
+            class="btn"
+            href="mailto:chavanrushi318@gmail.com"
+        >
+            Send Email
+        </a>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+        <p>
+            &copy; 2026 Chavan Rushi. All rights reserved.
+        </p>
+    </footer>
+
+</body>
+
+</html>
+
+
